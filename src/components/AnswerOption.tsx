@@ -3,11 +3,12 @@ import { Text, StyleSheet, Pressable} from 'react-native'
 type AnswerOption = {
     option: string;
     isSelected?: boolean;
+    onPress: (option: string)=> void;
 };
 
-export default function AnswerOption ({option, isSelected}: AnswerOption) {
+export default function AnswerOption ({option, isSelected, onPress}: AnswerOption) {
     return(
-        <Pressable onPress={()=> console.warn('Pressed:', option)} style={[styles.container, isSelected && { backgroundColor: '#E1F396', borderColor: '#E1F396'}]}>
+        <Pressable onPress={()=> onPress(option)} style={[styles.container, isSelected && { backgroundColor: '#E1F396', borderColor: '#E1F396'}]}>
             <Text>{option}</Text>
         </Pressable>
     );
