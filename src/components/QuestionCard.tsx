@@ -17,8 +17,8 @@ export  default function QuestionCard({question}: QuestionCard){
 
     return (
 
-            <Card title = {question.title}>
-              <View style={{ gap: 10}}>
+        <Card title = {question.title}>
+            <View style={{ gap: 10}}>
                 {question.options.map((option) => (
                     <AnswerOption
                         key={option} 
@@ -27,7 +27,7 @@ export  default function QuestionCard({question}: QuestionCard){
                         onPress={() => onOptionSelected(option) } 
                     /> 
                 ))}
-              </View>
-            </Card>
+            </View>
+        </Card>
     );
 }

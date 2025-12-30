@@ -1,20 +1,23 @@
 import {View, Text, StyleSheet } from 'react-native';
+import { PropsWithChildren } from 'react';   
 
 type Card = {
     title: string;
-}
+};
 
-export default function card({title}: Card) {
+export default function Card({title, children }: PropsWithChildren<Card>) {
     return (
         <View style= {styles.container}>
             <Text style= {styles.title}>{title}</Text>
+
+            {children}
             </View>
     );
 }
 
 
 const styles = StyleSheet.create({
-    QuestionCard: { 
+    container: { 
         backgroundColor: 'white',
         padding: 20,
         paddingVertical: 40,
@@ -32,7 +35,7 @@ const styles = StyleSheet.create({
 
     elevation: 5,
      },
-    question: { 
+    title: { 
         fontSize: 24,
         fontWeight: '500',
      },
