@@ -32,21 +32,12 @@ export default function QuizScreen() {
             )}
 
             {/* Footer */}
-            <CustomButton title="Next" rightIcon={<FontAwesome6 name="arrow-right-long"
+            <CustomButton title="Next" onPress={() => console.warn('Custom Button Pressed')}
+             rightIcon={
+                <FontAwesome6 name="arrow-right-long"
                  size={16}
                  color="white" /> } 
                   />
-            <Pressable
-            onPress={() => console.warn('pressed')}
-            onLongPress={()=> console.warn ('LONG PRESS')}
-            style={styles.button}>
-                <Text style={styles.buttonText}>Next</Text>
-                <FontAwesome6 name="arrow-right-long"
-                 size={16}
-                 color="white"
-                 style={styles.buttonIcon}
-                />
-                </Pressable>
             </View>        
         </SafeAreaView>        
     );
@@ -72,22 +63,4 @@ const styles = StyleSheet.create({
         color: '#005055',
         fontWeight: 'bold'
     },
-    button: {
-        backgroundColor: '#005055',
-        padding: 20,
-        borderRadius: 100,
-        alignItems: 'center',
-        justifyContent: 'center',     
-    },
-    buttonText: {
-        color: 'white',
-        fontWeight: '500',
-        fontSize: 16,
-        letterSpacing: 1.5, 
-    },
-    buttonIcon: {
-        position: 'absolute',
-        right: 20,
-    }
-
 });
