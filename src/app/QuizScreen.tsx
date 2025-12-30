@@ -5,7 +5,8 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 import questions from "../questions";
 import Card from "../components/Card";
-const question = questions[1000];
+import CustomButton from "../components/CustomButton";
+const question = questions[0];
 
 
 
@@ -31,6 +32,10 @@ export default function QuizScreen() {
             )}
 
             {/* Footer */}
+            <CustomButton title="Next" rightIcon={<FontAwesome6 name="arrow-right-long"
+                 size={16}
+                 color="white" /> } 
+                  />
             <Pressable
             onPress={() => console.warn('pressed')}
             onLongPress={()=> console.warn ('LONG PRESS')}
